@@ -1,14 +1,12 @@
-[#!/usr/bin/env bash
-# Display all running processes in a user-friendly and hierarchical format
+#!/usr/bin/env bash
+# A Bash script that displays running processes in a user-friendly format with full timestamp
 
-ps -eo user,lstart,cmd --forest | awk 'BEGIN {
-    printf "%-10s %-10s %-s\n", "USER", "STARTED", "CMD"
+ps -eo user,lstart,cmd --sort=start_time | awk '
+BEGIN {
+    print "USER STARTED CMD"
 }
 NR>1 {
-    started = $3 " " $4 " " $5 " " $6 " " $7
-    $1=$2=$3=$4=$5=$6=$7=""
-    cmd=substr($0,2)
-    split(started, a, " ")
-    started_time = a[4]
-    printf "%-10s %-10s %-s\n", $1, started_time, cmd
-}'
+    # Format the STARTED time as HH:MM:SS (columns 4,5,6)
+    started_time = $4
+    if (length(started_time) == 0) next
+    printf "%s %s:%s:%s %s\n", $1, substr($5, 1, 2), substr($5, 4, 2), s
