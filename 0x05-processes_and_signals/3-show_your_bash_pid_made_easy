@@ -1,10 +1,4 @@
 #!/usr/bin/env bash
-# A Bash script that prints numbers from 0 to infinity with a 1-second delay
+# A Bash script that displays the PID and name of processes containing "bash"
 
-i=0
-while true
-do
-  echo "$i"
-  ((i++))
-  sleep 1
-done
+pgrep -l bash
