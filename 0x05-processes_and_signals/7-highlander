@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script handles SIGTERM and prints a message when received
+# Displays "To infinity and beyond" every 2 seconds, and handles SIGTERM
 
 trap 'echo "I am invincible!!!"' SIGTERM
 
