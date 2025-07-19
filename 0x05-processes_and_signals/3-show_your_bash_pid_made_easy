@@ -1,3 +1,10 @@
-git add 0x05-processes_and_signals/4-to_infinity_and_beyond
-git commit -m "Add script 4-to_infinity_and_beyond"
-git push
+#!/usr/bin/env bash
+# A Bash script that prints numbers from 0 to infinity with a 1-second delay
+
+i=0
+while true
+do
+  echo "$i"
+  ((i++))
+  sleep 1
+done
