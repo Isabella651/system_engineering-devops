@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
+# This script runs indefinitely and handles SIGTERM by printing a custom message
 
-# Trap SIGTERM and define what to do instead of exiting
+# Trap SIGTERM and define custom behavior
 trap 'echo "I am invincible!!!"' SIGTERM
 
 # Infinite loop
