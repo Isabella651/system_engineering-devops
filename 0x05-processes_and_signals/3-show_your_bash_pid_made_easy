@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
-# A Bash script that displays its own Process ID (PID)
+# A Bash script that prints numbers from 0 to infinity with a 1-second delay
 
-echo "$$"
+i=0
+while true
+do
+  echo "$i"
+  ((i++))
+  sleep 1
+done
